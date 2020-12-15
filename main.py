@@ -658,7 +658,7 @@ def GameOver():
 
 running = True
 character = True
-informations=True
+informations = True
 pause=False
 current_time = 0
 char_time=0
@@ -668,7 +668,7 @@ char_time_start=0
 char_time_end=0
 info_time_start=0
 info_time_end=0
-pasue_time_start=0
+pause_time_start=0
 pause_time_end=0
 while running:
 
@@ -697,9 +697,13 @@ while running:
         screen.blit(playerSixImg, (sixXY))
 
         for event in pygame.event.get():
-            if event.type == pygame.QUIT:
+            if event.type == QUIT:
+                pygame.quit()
+                sys.exit()
+            if event.type == pygame.QUIT or (event.type == pygame.KEYDOWN and event.key == pygame.K_ESCAPE):#??not working? ???????????????????????????@@@@@@@@@@@@@@@@@@@@@@@@@@
                 character = False
                 running = False
+                informations = False
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_v:
                     character=False
@@ -730,6 +734,8 @@ while running:
                 char_time+=char_time_end+char_time_start
                 info_time_start=char_time_end
         pygame.display.update()
+
+
 
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
