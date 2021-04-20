@@ -1,5 +1,7 @@
+>No longer working at this.
+
 # Halloween Game  in Python
-My first game with pygame.
+My first game with pygame. 
 
 ## How I work
 I used PyCharm editor, graphic are from flaticon, background from freepik and sound are from couple sources i.a. opengameart, findsounds.
